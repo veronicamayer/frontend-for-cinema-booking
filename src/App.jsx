@@ -7,7 +7,7 @@ function App() {
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
-        fetch("http://localhost:5000/seats")
+        fetch("https://cinema-booking-dlrg.onrender.com/seats")
             .then((response) => response.json())
             .then((data) => setSeats(data));
     }, []);
@@ -15,7 +15,9 @@ function App() {
     console.log(seats);
 
     const handleSeatClick = (id) => {
-        fetch(`http://localhost:5000/seats/${id}`, { method: "PUT" })
+        fetch(`https://cinema-booking-dlrg.onrender.com/seats/${id}`, {
+            method: "PUT",
+        })
             .then((response) => response.json())
             .then((data) => {
                 const updatedSeat = data;
@@ -28,7 +30,9 @@ function App() {
     };
 
     const handleResetClick = () => {
-        fetch("http://localhost:5000/reset", { method: "DELETE" })
+        fetch("https://cinema-booking-dlrg.onrender.com/reset", {
+            method: "DELETE",
+        })
             .then((response) => response.json())
             .then((data) => setSeats(data));
     };
