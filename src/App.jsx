@@ -7,7 +7,7 @@ function App() {
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
-        fetch("https://cinema-booking-dlrg.onrender.com/seats")
+        fetch(`${import.meta.env.VITE_REACT_BACKEND_URL}/seats`)
             .then((response) => response.json())
             .then((data) => setSeats(data));
     }, []);
@@ -15,7 +15,7 @@ function App() {
     console.log(seats);
 
     const handleSeatClick = (id) => {
-        fetch(`https://cinema-booking-dlrg.onrender.com/seats/${id}`, {
+        fetch(`${import.meta.env.VITE_REACT_BACKEND_URL}/seats/${id}`, {
             method: "PUT",
         })
             .then((response) => response.json())
@@ -30,7 +30,7 @@ function App() {
     };
 
     const handleResetClick = () => {
-        fetch("https://cinema-booking-dlrg.onrender.com/reset", {
+        fetch(`${import.meta.env.VITE_REACT_BACKEND_URL}/reset`, {
             method: "DELETE",
         })
             .then((response) => response.json())
