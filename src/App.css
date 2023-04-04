@@ -1,0 +1,75 @@
+body {
+    background-color: #1d1d1d;
+    font-family: Helvetica, sans-serif;
+    color: white;
+    width: 30vw;
+    margin: auto;
+}
+
+img {
+    width: 70%;
+    margin: 10vh 15% 5vh 15%;
+}
+
+.seats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2%;
+}
+
+.seat {
+    background-image: url("./assets/img/noun-cinema-seat-4021502.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: black;
+}
+
+.seat.loge {
+    filter: sepia() hue-rotate(10deg) saturate(1);
+    color: rgb(139, 132, 105);
+}
+
+.seat.parkett {
+    filter: hue-rotate(100deg) saturate(2);
+    color: rgb(18, 25, 112);
+}
+
+.seat.free {
+    filter: brightness(100%);
+    cursor: pointer;
+}
+
+.seat.booked {
+    filter: brightness(40%);
+    cursor: default;
+}
+
+h2 {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9rem;
+    margin-top: 15vh;
+    text-align: center;
+}
+
+button {
+    border: 1px solid red;
+    background-color: rgba(255, 255, 255, 0);
+    color: red;
+    padding: 1% 5%;
+    border-radius: 20px;
+    font-family: "Courier New", Courier, monospace;
+    width: fit-content;
+    display: block;
+    margin: auto;
+}
